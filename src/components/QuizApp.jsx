@@ -461,7 +461,7 @@ public class Main {
   {
     q: "What is the output of `System.out.println(10 + 20 + \"30\");`?",
     code: null,
-    opts: ["3030", "102030", "3030", "3030"],
+    opts: ["3030", "102030", "102030", "1050"],
     ans: 0,
     diff: "Easy",
   },
@@ -641,36 +641,111 @@ public class Main {
     diff: "Easy",
   },
   {
-    q: "What will be the output of this code?\nclass Animal {...}",
-    code: null,
+    q: "What will be the output of this code?\nclass Animal and Dog?",
+    code: `class Animal {
+    void sound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+    }
+}`,
     opts: ["Some sound", "Bark", "Fetching", "Compile error"],
     ans: 1,
     diff: "Medium",
   },
   {
-    q: "What is the result?\nabstract class Vehicle {...}",
-    code: null,
+    q: "What is the result when using an abstract Vehicle class?",
+    code: `abstract class Vehicle {
+    abstract void start();
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car started");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v = new Car();
+        v.start();
+    }
+}`,
     opts: ["Car started", "Bike started", "Compile error", "Runtime error"],
+    ans: 0,
+    diff: "Medium",
+  },
+  {
+    q: "What happens when this code runs with Parent and Child classes?",
+    code: `class Parent {
+    void show() {
+        System.out.println("Parent prints");
+    }
+}
+
+class Child extends Parent {
+    void show() {
+        System.out.println("Child prints");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent p = new Parent();
+        p.show();
+    }
+}`,
+    opts: ["Child prints", "Parent prints", "Compile error", "Runtime error"],
     ans: 1,
     diff: "Medium",
   },
   {
-    q: "What happens when this code runs?\nclass Parent {...}",
-    code: null,
-    opts: ["Child prints", "Parent prints", "Compile error", "Runtime error"],
-    ans: 2,
-    diff: "Medium",
-  },
-  {
-    q: "Which OOP principle is demonstrated here?\ninterface Printable {...}",
-    code: null,
+    q: "Which OOP principle is demonstrated here with an interface Printable?",
+    code: `interface Printable {
+    void print();
+}
+
+class Document implements Printable {
+    public void print() {
+        System.out.println("Printing document");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Printable p = new Document();
+        p.print();
+    }
+}`,
     opts: ["Encapsulation", "Abstraction", "Polymorphism", "Inheritance"],
-    ans: 2,
+    ans: 1,
     diff: "Medium",
   },
   {
-    q: "What will be printed?\nclass A {...}",
-    code: null,
+    q: "What will be printed by this simple class A?",
+    code: `class A {
+    void display() {
+        System.out.println("A");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A obj = new A();
+        obj.display();
+    }
+}`,
     opts: ["A", "B", "Compile error", "Runtime error"],
     ans: 0,
     diff: "Medium",
@@ -762,7 +837,7 @@ public class Main {
   {
     q: "Which operator is used to concatenate strings?",
     code: null,
-    opts: ["+", "&", ".", "concat()"],
+    opts: ["+", "&", ".", "concat"],
     ans: 0,
     diff: "Easy",
   },
@@ -781,10 +856,31 @@ public class Main {
     diff: "Medium",
   },
   {
-    q: "Which OOP concept is shown here?\nclass Parent {...}\nclass Child extends Parent {...}",
-    code: null,
+    q: "Which OOP concept is shown here?\nConsider the following code:",
+    code: `// Parent class
+class Parent {
+    void display() {
+        System.out.println("This is the parent class");
+    }
+}
+
+// Child class inherits from Parent
+class Child extends Parent {
+    void show() {
+        System.out.println("This is the child class");
+    }
+}
+
+// Main method to test
+public class Main {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.display(); // inherited method
+        c.show();
+    }
+}`,
     opts: ["Encapsulation", "Polymorphism", "Abstraction", "Inheritance"],
-    ans: 1,
+    ans: 3,  // Correct index for "Inheritance"
     diff: "Medium",
   },
   {
