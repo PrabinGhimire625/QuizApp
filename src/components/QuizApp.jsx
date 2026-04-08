@@ -4,75 +4,452 @@ import { FaJava } from "react-icons/fa";
 // ─── Questions ────────────────────────────────────────────────────────────────
 const Qs = [
   {
-    q: "Which of the following is a feature of Java?",
+    q: "Which tool converts Java source code into bytecode?",
     code: null,
-    opts: ["Pointer-based memory access", "Manual memory management", "Goto statements", "Object-oriented"], // Only last is correct
-    ans: [3],  // "Object-oriented" is correct
-    diff: "Medium",
-  },
-  {
-    q: "What is the primary role of the JVM in Java?",
-    code: null,
-    opts: ["Compiles Java source code to bytecode", "Executes Java bytecode", "Provides development tools like compiler and debugger", "Manages JDK installation"],
+    opts: ["Java Virtual Machine", "Java Compiler", "Java Debugger", "Java Runtime Environment"],
     ans: 1,
     diff: "Easy",
   },
   {
-    q: "Which of the following is valid in Java?",
+    q: "Which of these is a reserved keyword in Java?",
     code: null,
-    opts: ["int 1num = 10;", "int num_1 = 10;", "int num-1 = 10;", "int num 1 = 10;"],
+    opts: ["main", "static", "print", "function"],
     ans: 1,
     diff: "Easy",
   },
   {
-    q: "Which is a correct array declaration in Java?",
+    q: "Which identifier is valid in Java?",
     code: null,
-    opts: ["int arr[]", "int[] arr", "Both A and B are correct", "None of the above"],
-    ans: 2,
+    opts: ["$amount", "2value", "my-name", "user name"],
+    ans: 0,
     diff: "Easy",
   },
   {
-    q: "What does the final keyword mean in Java?",
+    q: "What is the result of 5 >> 1 in Java?",
     code: null,
-    opts: ["Changeable variable", "Constant / cannot reassign", "Loop terminator", "Class type"],
-    ans: 1,
-    diff: "Easy",
-  },
-  {
-    q: "What is the output of the following Java code?",
-    code: "int x = 5;\nSystem.out.println(x << 1);",
-    opts: ["2", "5", "10", "1"],
+    opts: ["4", "8", "2", "6"],
     ans: 2,
     diff: "Medium",
   },
   {
-    q: "Which access modifier makes a member accessible only within the same package?",
+    q: "What is the value of x after executing the following code?",
+    code: `int x = 7;
+x--;`,
+    opts: ["6", "7", "8", "5"],
+    ans: 0,
+    diff: "Easy",
+  },
+  {
+    q: "Which of the following is a primitive type in Java?",
     code: null,
-    opts: ["public", "private", "protected", "default"],
+    opts: ["Integer", "boolean", "String", "ArrayList"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "Which of these is a conditional statement?",
+    code: null,
+    opts: ["for", "while", "if-else", "do-while"],
+    ans: 2,
+    diff: "Easy",
+  },
+  {
+    q: "Which loop executes at least once?",
+    code: null,
+    opts: ["for", "while", "do-while", "switch"],
+    ans: 2,
+    diff: "Easy",
+  },
+  {
+    q: "What is the correct way to declare an array of integers?",
+    code: null,
+    opts: ["int[] nums;", "int nums[];", "Both A and B", "int nums{};"],
+    ans: 2,
+    diff: "Easy",
+  },
+  {
+    q: "Which keyword refers to the current object inside a method?",
+    code: null,
+    opts: ["this", "super", "parent", "self"],
+    ans: 0,
+    diff: "Easy",
+  },
+  {
+    q: "Which keyword is used to call a parent class constructor?",
+    code: null,
+    opts: ["this", "super", "parent", "base"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "Which of the following is required for method overloading?",
+    code: null,
+    opts: [
+      "Methods must have different names",
+      "Methods must have the same parameters",
+      "Methods must have the same name but different parameter lists",
+      "Methods must return the same type"
+    ],
+    ans: 2,
+    diff: "Easy"
+  },
+  {
+    q: "Which access modifier allows access only within the same package?",
+    code: null,
+    opts: ["public", "protected", "private", "default"],
     ans: 3,
     diff: "Medium",
   },
   {
-    q: "What is the output? (For loop with condition)",
-    code: `for(int i = 0; i < 5; i++) {\n    if(i % 2 == 0)\n        System.out.print(i);\n}`,
-    opts: ["024", "123", "01234", "135"],
+    q: "What is the default value of an uninitialized int array element?",
+    code: null,
+    opts: ["0", "null", "undefined", "-1"],
     ans: 0,
-    diff: "Medium",
+    diff: "Easy",
   },
   {
-    q: "What is the output? (Break statement)",
-    code: `for(int i = 1; i <= 5; i++) {\n    if(i == 3) break;\n    System.out.print(i);\n}`,
-    opts: ["12345", "12", "123", "45"],
+    q: "What happens when you call s.toUpperCase() on a String in Java?",
+    code: null,
+    opts: ["Original string changes", "Returns a new string", "Throws error", "Removes lowercase letters"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "What does the '==' operator check when used with Strings?",
+    code: null,
+    opts: [
+      "Whether the strings have the same content",
+      "Whether the strings point to the same object in memory",
+      "Whether the strings have the same length",
+      "Whether the strings are immutable"
+    ],
+    ans: 1,
+    diff: "Easy"
+  },
+  {
+    q: "Which ArrayList method adds an element at the end?",
+    code: null,
+    opts: ["append()", "add()", "insert()", "push()"],
     ans: 1,
     diff: "Medium",
   },
   {
-    q: "What is the output? (Operators)",
-    code: `int x = 5;\nSystem.out.println(x++ + ++x);`,
-    opts: ["10", "11", "12", "13"],
-    ans: 2,
+    q: "Size of float in Java is?",
+    code: null,
+    opts: ["2 bytes", "4 bytes", "8 bytes", "Depends on system"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "Which operator performs bitwise AND?",
+    code: null,
+    opts: ["&", "&&", "|", "||"],
+    ans: 0,
+    diff: "Easy",
+  },
+  {
+    q: "Result of 5 + 10 + \"5\" in Java?",
+    code: null,
+    opts: ["155", "1510", "15105", "5105"],
+    ans: 0,
+    diff: "Easy",
+  },
+  {
+    q: "Constructors in Java are used to?",
+    code: null,
+    opts: ["Destroy objects", "Initialize objects", "Call methods", "Create classes"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "Which concept hides internal implementation details?",
+    code: null,
+    opts: ["Encapsulation", "Inheritance", "Polymorphism", "Abstraction"],
+    ans: 3,
+    diff: "Easy",
+  },
+  {
+    q: "Which loop is preferred when number of iterations is known?",
+    code: null,
+    opts: ["while", "for", "do-while", "switch"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "Output of: for(int i=0;i<3;i++){ if(i==1) continue; System.out.print(i); }",
+    code: null,
+    opts: ["012", "02", "01", "12"],
+    ans: 1,
     diff: "Medium",
   },
+  {
+    q: "Which operator is used for right shift?",
+    code: null,
+    opts: [">>", "<<", ">>>", ">>="],
+    ans: 0,
+    diff: "Medium",
+  },
+  {
+    q: "Which method returns a portion of a String?",
+    code: null,
+    opts: ["substr()", "substring()", "sub()", "slice()"],
+    ans: 1,
+    diff: "Easy",
+  },
+  {
+    q: "Concept supporting code reuse is called?",
+    code: null,
+    opts: ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"],
+    ans: 0,
+    diff: "Easy",
+  },
+  {
+    q: "Statement to exit nearest loop?",
+    code: null,
+    opts: ["break", "continue", "exit", "stop"],
+    ans: 0,
+    diff: "Easy",
+  },
+  {
+    q: "Which is a valid example of method overloading?",
+    code: null,
+    opts: ["void show(int x){} void show(int x,int y){}", "void show(){} void show(){}", "void show(int x){} int show(int x){}", "void show(int x){} void show(double x){}"],
+    ans: 0,
+    diff: "Medium",
+  },
+  {
+    q: "What is the output?",
+    code: `int x = 5;
+System.out.println(x++);`,
+    opts: ["5", "6", "Error", "0"],
+    ans: 0,
+    diff: "Easy"
+  },
+  {
+    q: "What is the output?",
+    code: `int a = 10;
+int b = 20;
+System.out.println(a + b + "5");`,
+    opts: ["155", "10205", "305", "10205"],
+    ans: 2,
+    diff: "Easy"
+  },
+  {
+    q: "What is the output?",
+    code: `int[] arr = {1,2,3};
+System.out.println(arr[2]);`,
+    opts: ["1", "2", "3", "0"],
+    ans: 2,
+    diff: "Easy"
+  },
+  {
+    q: "What is the output?",
+    code: `for(int i = 0; i < 3; i++){
+    System.out.print(i + " ");
+}`,
+    opts: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+    ans: 0,
+    diff: "Easy"
+  },
+  {
+    q: "What is the output of the following code?",
+    code: `int x = 3;
+int y = ++x + x++;
+System.out.println(y);`,
+    opts: ["7", "8", "9", "10"],
+    ans: 1,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output?",
+    code: `int[] arr = {1, 2, 3, 4};
+for(int i = 0; i < arr.length; i++){
+    if(arr[i] % 2 == 0) continue;
+    System.out.print(arr[i]);
+}`,
+    opts: ["1234", "13", "24", "12"],
+    ans: 1,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output of this code?",
+    code: `class A {
+    static void show(){ System.out.println("A"); }
+}
+class B extends A {
+    static void show(){ System.out.println("B"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.show();
+    }
+}`,
+    opts: ["A", "B", "Compile error", "Runtime error"],
+    ans: 0,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output?",
+    code: `int x = 5;
+System.out.println(x++ + ++x);`,
+    opts: ["10", "11", "12", "13"],
+    ans: 2,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output of this nested loop?",
+    code: `for(int i = 1; i <= 2; i++){
+    for(int j = 1; j <= 2; j++){
+        System.out.print(i+j + " ");
+    }
+}`,
+    opts: ["11 12 21 22", "2 3 3 4", "12 21 34 43", "1 2 1 2"],
+    ans: 1,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output?",
+    code: `class A {
+    int x = 5;
+}
+class B extends A {
+    int x = 10;
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj = new B();
+        System.out.println(((B)obj).x);
+    }
+}`,
+    opts: ["5", "10", "Compile error", "Runtime error"],
+    ans: 1,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output?",
+    code: `class Parent {
+    void greet() { System.out.println("Hello from Parent"); }
+}
+class Child extends Parent {
+    void greet(String name) { System.out.println("Hello " + name); }
+}
+public class Main {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.greet();
+    }
+}`,
+    opts: ["Hello from Parent", "Hello null", "Compile error", "Runtime error"],
+    ans: 0,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output?",
+    code: `interface I {
+    void show();
+}
+class A implements I {
+    public void show() { System.out.println("Interface Implemented"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        I obj = new A();
+        obj.show();
+    }
+}`,
+    opts: ["Interface Implemented", "Compile error", "Runtime error", "Nothing"],
+    ans: 0,
+    diff: "Medium"
+  },
+  {
+    q: "What is the output?",
+    code: `class A {
+    final void show() { System.out.println("A"); }
+}
+class B extends A {
+    // void show() { System.out.println("B"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        new B().show();
+    }
+}`,
+    opts: ["A", "B", "Compile error", "Runtime error"],
+    ans: 0,
+    diff: "Medium"
+  },
+  {
+    q: "Which is true about AWT and Swing in Java?",
+    code: null,
+    opts: [
+      "AWT is lightweight and Swing is heavyweight",
+      "AWT is platform-dependent, Swing is platform-independent",
+      "Both AWT and Swing are platform-independent",
+      "AWT provides more components than Swing"
+    ],
+    ans: 1,
+    diff: "Medium"
+  },
+  {
+    q: "Which class is used to create a top-level window in Swing?",
+    code: null,
+    opts: ["JPanel", "JFrame", "JButton", "JLabel"],
+    ans: 1,
+    diff: "Easy"
+  },
+  {
+    q: "Which class in AWT is used to create a button?",
+    code: null,
+    opts: ["JButton", "Button", "TextField", "JLabel"],
+    ans: 1,
+    diff: "Easy"
+  },
+  {
+    q: "Which component is used to take text input from the user in Swing?",
+    code: null,
+    opts: ["JTextArea", "JTextField", "JLabel", "JButton"],
+    ans: 1,
+    diff: "Easy"
+  },
+  {
+    q: "Which method is used to display a simple dialog message in Java Swing?",
+    code: null,
+    opts: [
+      "JOptionPane.showMessageDialog()",
+      "System.out.println()",
+      "Dialog.display()",
+      "Frame.showDialog()"
+    ],
+    ans: 0,
+    diff: "Easy"
+  },
+  {
+    q: "Which AWT layout manager arranges components in a single row or column?",
+    code: null,
+    opts: ["FlowLayout", "BorderLayout", "GridLayout", "CardLayout"],
+    ans: 0,
+    diff: "Medium"
+  },
+  {
+    q: "Which block is used to handle exceptions in Java?",
+    code: null,
+    opts: ["try", "catch", "finally", "All of the above"],
+    ans: 3,
+    diff: "Medium"
+  },
+  {
+    q: "What does the 'throw' keyword do in Java?",
+    code: null,
+    opts: [
+      "Declares exceptions a method might throw",
+      "Throws an exception explicitly",
+      "Catches an exception",
+      "Terminates the program"
+    ],
+    ans: 1,
+    diff: "Medium"
+  }
 ];
 
 const TOTAL = Qs.length;
