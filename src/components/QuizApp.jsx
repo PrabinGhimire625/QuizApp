@@ -1057,8 +1057,8 @@ export default function QuizApp() {
               Each question has a 1-minute timer. Read carefully!
             </div>
             <div className="start-meta">
-              <span className="sm-chip">10 Questions</span>
-              <span className="sm-chip">10 Marks</span>
+              <span className="sm-chip">50 Questions</span>
+              <span className="sm-chip">50 Marks</span>
               <span className="sm-chip">1 min / question</span>
               <span className="sm-chip">Java Core Topics</span>
             </div>
